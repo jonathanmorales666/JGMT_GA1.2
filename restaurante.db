@@ -1,0 +1,38 @@
+-- Crea una base de datos llamada restaurante_db
+CREATE DATABASE restaurante_db;
+
+-- Selecciona la base de datos restaurante_db para trabajar dentro de ella
+USE restaurante_db;
+
+-- Crea una tabla llamada platillos
+CREATE TABLE platillos (
+    -- Crea el campo id como número entero, autoincremental y clave primaria
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    -- Crea el campo nombre para guardar el nombre del platillo, obligatorio
+    nombre VARCHAR(100) NOT NULL
+);
+
+-- Crea una tabla llamada usuarios
+CREATE TABLE usuarios (
+    -- Crea el campo id como número entero, autoincremental y clave primaria
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    -- Crea el campo usuario para guardar el nombre de usuario
+    usuario VARCHAR(50) NOT NULL,
+
+    -- Crea el campo contraseña para guardar la contraseña del usuario
+    contraseña VARCHAR(50) NOT NULL,
+
+    -- Crea el campo rol para indicar si es administrador o mesero
+    rol VARCHAR(20) NOT NULL
+);
+
+-- Inserta dos usuarios iniciales en la tabla usuarios
+INSERT INTO usuarios (usuario, contraseña, rol)
+VALUES
+-- Usuario administrador con acceso a todas las opciones
+('admin', '1234', 'administrador'),
+
+-- Usuario mesero con acceso solo a ver el menú y salir
+('Jonathan', '6767', 'usuario');
